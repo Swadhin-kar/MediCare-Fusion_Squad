@@ -1,57 +1,50 @@
 # React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# 🏥 MediCare – Smart Clinic Management System
 
-Currently, two official plugins are available:
+MediCare is an intelligent, voice-powered clinic management platform built for modern healthcare practices. It automates appointment booking, streamlines doctor-patient interactions, and leverages AI to generate smart prescriptions with feedback learning.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## 🚀 Features
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- 🎙️ **Voice-Based Appointment Booking**  
+  Receptionists can book appointments using speech, eliminating typing and manual entry.
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+- 🧠 **AI-Powered Prescription Generation**  
+  Doctors receive suggestions for prescriptions based on patient symptoms and past data.
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+- 🔄 **Real-Time Sync with MCP Server**  
+  All data flows through a central backend server that updates in real-time.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+- 🖥️ **Doctor Dashboard**  
+  Doctors view and manage appointments, patient history, and prescriptions in one place.
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+- 📊 **Feedback Loop for AI**  
+  Learning system improves prescription accuracy based on doctor feedback.
+
+---
+
+## 🧱 Tech Stack
+
+| Layer         | Technology                     |
+|---------------|--------------------------------|
+| Frontend      | TypeScript, React, Vite        |
+| Backend (MCP) | Node.js, Express, WebSocket    |
+| AI Layer      | Python (Flask/FastAPI)         |
+| Database      | MongoDB / Firebase Realtime DB |
+| Voice Input   | Web Speech API / Whisper       |
+
+---
+
+## 🛠️ Setup Instructions
+
+### 1. Clone the repository
+```bash
+git clone https://github.com/yourusername/medicare.git
+cd medicare
+
+
 // 
   <!-- VITE v6.3.5  ready in 561 ms
 
