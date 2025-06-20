@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor Dashboard</title>
+    <link rel="stylesheet" href="/src/style/doctor.css">
+</head>
+<body>
+    <header>
+        <div class="logo">Clinic Logo</div>
+        <nav>
+            <ul>
+                <li><a href="#">Dashboard</a></li>
+                <li><a href="#">Patient History</a></li>
+                <li><a href="#">Appointments</a></li>
+                <li><a href="#">AI Prescription</a></li>
+                <li><a href="#">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <h1>Welcome, Dr. [Last Name]!</h1>
+        
+        <section class="appointments">
+            <h2>Current Appointments</h2>
+            <table>
+                <tr>
+                    <th>Patient Name</th>
+                    <th>Appointment Time</th>
+                    <th>Symptoms</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                </tr>
+                <!-- Dynamic rows for appointments -->
+            </table>
+        </section>
+        
+        <section class="patient-history">
+            <h2>Patient History</h2>
+            <input type="text" placeholder="Search for a patient...">
+            <div class="patient-profile">
+                <!-- Patient details will be displayed here -->
+            </div>
+        </section>
+        
+        <section class="ai-prescription">
+            <h2>AI Prescription Suggestions</h2>
+            <textarea placeholder="Enter current symptoms..."></textarea>
+            <button>Get AI Prescription</button>
+            <div class="prescription-suggestions">
+                <!-- AI suggestions will be displayed here -->
+            </div>
+            <button>Save Prescription</button>
+        </section>
+        
+        <section class="communication">
+            <h2>Patient Communication</h2>
+            <!-- Chat interface or video call option -->
+        </section>
+    </main>
+    
+    <footer>
+        <p>Contact us: [Clinic Contact Info]</p>
+        <a href="#">Help/Support</a>
+    </footer>
+</body>
+</html>

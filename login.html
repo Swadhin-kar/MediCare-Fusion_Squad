@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Multi-Role Registration & Login</title>
+  <link rel="stylesheet" href="/src/style/login.css">
+</head>
+<body>
+  <div class="container" role="main" aria-label="Multi role registration and login system">
+    <nav class="tab-header" role="tablist" aria-label="Role Selection Tabs">
+      <button role="tab" aria-selected="true" aria-controls="tab-patient" id="tab-patient-btn" class="active" tabindex="0">Patient</button>
+      <button role="tab" aria-selected="false" aria-controls="tab-doctor" id="tab-doctor-btn" tabindex="-1">Doctor</button>
+      <button role="tab" aria-selected="false" aria-controls="tab-receptionist" id="tab-receptionist-btn" tabindex="-1">Receptionist</button>
+    </nav>
+
+    <section id="tab-patient" role="tabpanel" aria-labelledby="tab-patient-btn">
+      <!-- Patient Login -->
+      <div class="tab-content" data-role="patient">
+        <h2>Patient Login</h2>
+        <form id="patient-login-form" novalidate>
+          <label for="patient-login-email">Email</label>
+          <input type="email" id="patient-login-email" placeholder="you@example.com" required autocomplete="username email" />
+          <label for="patient-login-password">Password</label>
+          <input type="password" id="patient-login-password" placeholder="••••••••" required autocomplete="current-password" />
+          <button type="submit" class="submit-btn">Login</button>
+          <p class="form-toggle-text">Don't have an account? <span data-target="patient-register">Register here</span></p>
+        </form>
+
+        <!-- Patient Registration -->
+        <form id="patient-register-form" style="display:none" novalidate>
+          <h2>Patient Registration</h2>
+          <label for="patient-register-name">Full Name</label>
+          <input type="text" id="patient-register-name" placeholder="John Doe" required autocomplete="name" />
+          <label for="patient-register-email">Email</label>
+          <input type="email" id="patient-register-email" placeholder="you@example.com" required autocomplete="email" />
+          <label for="patient-register-password">Password</label>
+          <input type="password" id="patient-register-password" placeholder="••••••••" required autocomplete="new-password" />
+          <label for="patient-register-age">Age</label>
+          <input type="number" id="patient-register-age" min="0" max="120" placeholder="30" required />
+          <button type="submit" class="submit-btn">Register</button>
+          <p class="form-toggle-text">Already have an account? <span data-target="patient-login">Login here</span></p>
+        </form>
+      </div>
+    </section>
+
+    <section id="tab-doctor" role="tabpanel" aria-labelledby="tab-doctor-btn" hidden>
+      <!-- Doctor Login -->
+      <div class="tab-content" data-role="doctor">
+        <h2>Doctor Login</h2>
+        <form id="doctor-login-form" novalidate>
+          <label for="doctor-login-email">Email</label>
+          <input type="email" id="doctor-login-email" placeholder="you@example.com" required autocomplete="username email" />
+          <label for="doctor-login-password">Password</label>
+          <input type="password" id="doctor-login-password" placeholder="••••••••" required autocomplete="current-password" />
+          <button type="submit" class="submit-btn">Login</button>
+          <p class="form-toggle-text">Don't have an account? <span data-target="doctor-register">Register here</span></p>
+        </form>
+
+        <!-- Doctor Registration -->
+        <form id="doctor-register-form" style="display:none" novalidate>
+          <h2>Doctor Registration</h2>
+          <label for="doctor-register-name">Full Name</label>
+          <input type="text" id="doctor-register-name" placeholder="Dr. Jane Smith" required autocomplete="name" />
+          <label for="doctor-register-email">Email</label>
+          <input type="email" id="doctor-register-email" placeholder="you@example.com" required autocomplete="email" />
+          <label for="doctor-register-password">Password</label>
+          <input type="password" id="doctor-register-password" placeholder="••••••••" required autocomplete="new-password" />
+          <label for="doctor-register-specialty">Specialty</label>
+          <input type="text" id="doctor-register-specialty" placeholder="Cardiology" required />
+          <button type="submit" class="submit-btn">Register</button>
+          <p class="form-toggle-text">Already have an account? <span data-target="doctor-login">Login here</span></p>
+        </form>
+      </div>
+    </section>
+
+    <section id="tab-receptionist" role="tabpanel" aria-labelledby="tab-receptionist-btn" hidden>
+      <!-- Receptionist Login -->
+      <div class="tab-content" data-role="receptionist">
+        <h2>Receptionist Login</h2>
+        <form id="receptionist-login-form" novalidate>
+          <label for="receptionist-login-email">Email</label>
+          <input type="email" id="receptionist-login-email" placeholder="you@example.com" required autocomplete="username email" />
+          <label for="receptionist-login-password">Password</label>
+          <input type="password" id="receptionist-login-password" placeholder="••••••••" required autocomplete="current-password" />
+          <button type="submit" class="submit-btn">Login</button>
+          <p class="form-toggle-text">Don't have an account? <span data-target="receptionist-register">Register here</span></p>
+        </form>
+
+        <!-- Receptionist Registration -->
+        <form id="receptionist-register-form" style="display:none" novalidate>
+          <h2>Receptionist Registration</h2>
+          <label for="receptionist-register-name">Full Name</label>
+          <input type="text" id="receptionist-register-name" placeholder="Jane Doe" required autocomplete="name" />
+          <label for="receptionist-register-email">Email</label>
+          <input type="email" id="receptionist-register-email" placeholder="you@example.com" required autocomplete="email" />
+          <label for="receptionist-register-password">Password</label>
+          <input type="password" id="receptionist-register-password" placeholder="••••••••" required autocomplete="new-password" />
+          <button type="submit" class="submit-btn">Register</button>
+          <p class="form-toggle-text">Already have an account? <span data-target="receptionist-login">Login here</span></p>
+        </form>
+      </div>
+    </section>
+  </div>
+
+  <script src="./src/scripts/login.js"></script>
+
+  <!-- <script>
+    // Tab switching logic
+    const tabs = document.querySelectorAll('.tab-header button');
+    const tabPanels = document.querySelectorAll('[role="tabpanel"]');
+
+    tabs.forEach((tab) => {
+      tab.addEventListener('click', () => {
+        // Deselect all tabs
+        tabs.forEach((t) => {
+          t.classList.remove('active');
+          t.setAttribute('aria-selected', 'false');
+          t.setAttribute('tabindex', '-1');
+        });
+        // Hide all panels
+        tabPanels.forEach((panel) => {
+          panel.hidden = true;
+        });
+
+        // Activate selected tab
+        tab.classList.add('active');
+        tab.setAttribute('aria-selected', 'true');
+        tab.setAttribute('tabindex', '0');
+
+        // Show corresponding panel
+        const panelId = tab.getAttribute('aria-controls');
+        document.getElementById(panelId).hidden = false;
+        document.getElementById(panelId).querySelector('input').focus();
+
+        // Reset forms to login form visible
+        resetFormsVisibility(panelId);
+      });
+    });
+
+    // Toggle login/register forms inside each role tab
+    document.querySelectorAll('.form-toggle-text span').forEach((toggle) => {
+      toggle.addEventListener('click', () => {
+        const target = toggle.getAttribute('data-target');
+        const container = toggle.closest('.tab-content');
+
+        const loginForm = container.querySelector('form[id$="login-form"]');
+        const registerForm = container.querySelector('form[id$="register-form"]');
+
+        if (target.includes('register')) {
+          if (loginForm) loginForm.style.display = 'none';
+          if (registerForm) registerForm.style.display = 'flex';
+        }
+        else if (target.includes('login')) {
+          if (loginForm) loginForm.style.display = 'flex';
+          if (registerForm) registerForm.style.display = 'none';
+        }
+      });
+    });
+
+    // Helper to reset forms to default login view on tab switch
+    function resetFormsVisibility(tabId) {
+      const panel = document.getElementById(tabId);
+      if (!panel) return;
+      const loginForms = panel.querySelectorAll('form[id$="login-form"]');
+      const registerForms = panel.querySelectorAll('form[id$="register-form"]');
+
+      loginForms.forEach(form => form.style.display = 'flex');
+      registerForms.forEach(form => form.style.display = 'none');
+    }
+
+    // Initialize focus on first tab
+    document.getElementById('tab-patient-btn').focus();
+  </script> -->
+</body>
+</html>
+
