@@ -1,69 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Doctor Dashboard</title>
-    <link rel="stylesheet" href="/src/style/doctor.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Doctor Dashboard</title>
+  <link rel="stylesheet" href="src/style/doctor.css" />
 </head>
 <body>
-    <header>
-        <div class="logo">Clinic Logo</div>
-        <nav>
-            <ul>
-                <li><a href="#">Dashboard</a></li>
-                <li><a href="#">Patient History</a></li>
-                <li><a href="#">Appointments</a></li>
-                <li><a href="#">AI Prescription</a></li>
-                <li><a href="#">Logout</a></li>
-            </ul>
-        </nav>
-    </header>
-    
-    <main>
-        <h1>Welcome, Dr. [Last Name]!</h1>
-        
-        <section class="appointments">
-            <h2>Current Appointments</h2>
-            <table>
-                <tr>
-                    <th>Patient Name</th>
-                    <th>Appointment Time</th>
-                    <th>Symptoms</th>
-                    <th>Status</th>
-                    <th>Actions</th>
-                </tr>
-                <!-- Dynamic rows for appointments -->
-            </table>
-        </section>
-        
-        <section class="patient-history">
-            <h2>Patient History</h2>
-            <input type="text" placeholder="Search for a patient...">
-            <div class="patient-profile">
-                <!-- Patient details will be displayed here -->
-            </div>
-        </section>
-        
-        <section class="ai-prescription">
-            <h2>AI Prescription Suggestions</h2>
-            <textarea placeholder="Enter current symptoms..."></textarea>
-            <button>Get AI Prescription</button>
-            <div class="prescription-suggestions">
-                <!-- AI suggestions will be displayed here -->
-            </div>
-            <button>Save Prescription</button>
-        </section>
-        
-        <section class="communication">
-            <h2>Patient Communication</h2>
-            <!-- Chat interface or video call option -->
-        </section>
-    </main>
-    
-    <footer>
-        <p>Contact us: [Clinic Contact Info]</p>
-        <a href="#">Help/Support</a>
-    </footer>
+  <header>
+    <div class="container">
+      <div class="logo">🏥 MediCare</div>
+      <nav>
+        <ul>
+          <li><a href="#">Dashboard</a></li>
+          <li><a href="#">Patient History</a></li>
+          <li><a href="#">Appointments</a></li>
+          <li><a href="#">AI Prescription</a></li>
+          <li><a href="#">Logout</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <h1>Welcome, Dr. Sharma!</h1>
+
+    <section class="card">
+      <h2>Current Appointments</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Patient Name</th>
+            <th>Time</th>
+            <th>Symptoms</th>
+            <th>Status</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Rahul Mehta</td>
+            <td>10:30 AM</td>
+            <td>Fever, Cough</td>
+            <td>Pending</td>
+            <td><button class="btn-primary">Start</button></td>
+          </tr>
+          <!-- More rows dynamically -->
+        </tbody>
+      </table>
+    </section>
+
+    <section class="card">
+      <h2>Patient History</h2>
+      <input type="text" placeholder="Search for a patient..." class="search-input" />
+      <div class="patient-profile">
+        <!-- Patient details here -->
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>AI Prescription</h2>
+      <textarea placeholder="Enter symptoms..." rows="4"></textarea>
+      <div class="btn-group">
+        <button class="btn-primary">Get Suggestions</button>
+        <button class="btn-secondary">Save Prescription</button>
+      </div>
+      <div class="prescription-suggestions">
+        <!-- AI output -->
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Patient Communication</h2>
+      <p>Live chat or video call module coming soon.</p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 MediCare Clinic | Contact: +91-9876543210</p>
+      <a href="#">Help & Support</a>
+    </div>
+  </footer>
 </body>
 </html>

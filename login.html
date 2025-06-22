@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Multi-Role Registration & Login</title>
-  <link rel="stylesheet" href="/src/style/login.css">
+  <link rel="stylesheet" href="src/style/login.css">
 </head>
 <body>
   <div class="container" role="main" aria-label="Multi role registration and login system">
@@ -53,7 +53,8 @@
           <input type="email" id="doctor-login-email" placeholder="you@example.com" required autocomplete="username email" />
           <label for="doctor-login-password">Password</label>
           <input type="password" id="doctor-login-password" placeholder="••••••••" required autocomplete="current-password" />
-          <button type="submit" class="submit-btn">Login</button>
+          <button type="button" class="submit-btn" onclick="window.location.href='doctor.html'">Login</button>
+
           <p class="form-toggle-text">Don't have an account? <span data-target="doctor-register">Register here</span></p>
         </form>
 
